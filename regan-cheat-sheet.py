@@ -11,6 +11,7 @@
 # 1.) Literals
 # 2.) if, else-if, else, and, or
 # 3.) Loops
+# 4.) class
 
 # Literals
 255, 0b11111111, 0o377, 0xff # Integers (decimal, binary, octal, hex)
@@ -65,5 +66,31 @@ while l < r: # reverses elements
 
 for i in nums: # prints the list
     print(i, end="")
+
+# class
+class MyClass:
+    def __init__(self, public_var, private_var):
+        self.public_var = public_var
+        self.__private_var = private_var
+
+    def public_method(self):
+        print("This is a public method.")
+        self.__private_method()
+
+    def __private_method(self):
+        print("This is a private method.")
+
+    def print_vars(self):
+        print("Public variable:", self.public_var)
+        print("Private variable:", self.__private_var)
+
+    def __del__(self):
+        print("Destructor called, object deleted.")
+
+# Example usage:
+obj = MyClass("Public", "Private")
+obj.public_method()
+obj.print_vars()
+
 
 
